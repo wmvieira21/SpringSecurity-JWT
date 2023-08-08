@@ -6,6 +6,9 @@ import org.springframework.hateoas.Links;
 
 import com.vieira.productJWT.enums.UserRole;
 
-public record UserDTO(UUID id, String login, String password, UserRole role, Links link) {
-	
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
+public record UserDTO(@NotNull UUID id, @NotEmpty String login, @NotEmpty String password, @NotNull UserRole role,
+		Links link) {
 }

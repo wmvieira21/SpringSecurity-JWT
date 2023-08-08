@@ -32,6 +32,10 @@ public class UserService {
 		return user;
 	}
 
+	public User saveUser(User user) {
+		return userRepository.save(user);
+	}
+
 	public static UserDTO fromUserToDTO(User user) {
 		return new UserDTO(user.getId(), user.getLogin(), user.getPassword(), user.getRole(), user.getLinks());
 	}
